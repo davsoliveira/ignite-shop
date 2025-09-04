@@ -3,6 +3,8 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import { getCssText } from "@/styles";
 import { globalStyles } from "@/styles/global";
+import logoImg from "../assets/logo.svg"
+import { Container, Header } from "@/styles/pages/app";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -18,7 +20,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
+
   globalStyles()
 
   return (
@@ -29,7 +31,12 @@ export default function RootLayout({
       <body
         className={`${roboto.className} antialiased`}
       >
-        {children}
+        <Container>
+          <Header>
+            <img src={logoImg.src} alt="" />
+          </Header>
+          {children}
+        </Container>
       </body>
     </html>
   );
