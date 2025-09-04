@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import { getCssText } from "@/styles";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -18,6 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
+      </head>
       <body
         className={`${roboto.className} antialiased`}
       >
