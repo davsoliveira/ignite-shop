@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { getCssText } from "@/styles";
+import { globalStyles } from "@/styles/global";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -17,6 +18,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
+  globalStyles()
+
   return (
     <html lang="en">
       <head>
