@@ -5,6 +5,7 @@ import { getCssText } from "@/styles";
 import { globalStyles } from "@/styles/global";
 import logoImg from "../assets/logo.svg"
 import { Container, Header } from "@/styles/pages/app";
+import Image from "next/image";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -33,7 +34,7 @@ export default function RootLayout({
       >
         <Container>
           <Header>
-            <img src={logoImg.src} alt="" />
+            <Image width={200} height={120} src={logoImg.src} alt="" />
           </Header>
           {children}
         </Container>
